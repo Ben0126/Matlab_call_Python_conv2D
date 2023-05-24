@@ -1,0 +1,35 @@
+
+input_signal = randn(10000, 10000);
+kernel = randn(6000, 6000);
+
+tic;
+output_signal = conv2(input_signal, kernel, 'same');
+toc;
+
+tic;
+py_result = py.scipy.signal.convolve2d(input_signal, kernel, 'same');
+toc;
+
+tic;
+
+[ma,na]=size(a);[mb,nb]=size(b);
+a_zp=zeros(ma+mb-1, na+nb-1);a_zp(1:ma, 1:na)=a;
+b_zp=zeros(ma+mb-1, na+nb-1);b_zp(1:mb, 1:nb)=b;
+input_signal_fft = fft2(a_zp);
+kernel_fft = fft2(b_zp);
+output_signal_fft = input_signal_fft .* kernel_fft;
+output_signal1 = ifft2(output_signal_fft);
+toc;
+
+%tic;
+%%pyrunfile("fft_convolve2d.py");
+%system('python fft_convolve2d(input_signal,kernel).py')
+%toc;
+
+%tic;
+%csvwrite('matrix.csv', input_signal);
+%system('python convolution.py matrix.csv');
+%result = csvread('result.csv');
+%toc;
+
+
