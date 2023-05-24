@@ -1,7 +1,7 @@
 import numpy as np
 import cupy as cp
 import cupyx.scipy.fft as cufft
-import time
+
 
 def gpu_fft_convolve2D(signal, kernel):
     # 將數據移動到GPU內存
@@ -28,15 +28,3 @@ def gpu_fft_convolve2D(signal, kernel):
     # 返回結果
     return np.real(product)
 
-# # 創建2D信號和卷積核
-# signal = np.random.rand(1000, 1000)  # 10000x10000的隨機信號
-# kernel = np.random.rand(600, 600)  
-
-# t1 = time.time()
-# # 使用GPU加速的傅立葉卷積計算
-# result = gpu_fft_convolve2D(signal, kernel)
-# t2 = time.time()
-
-# t = t2-t1
-# # 打印結果
-# print(result)
