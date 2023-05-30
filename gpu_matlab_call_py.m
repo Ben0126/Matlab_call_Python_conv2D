@@ -1,6 +1,6 @@
 clear; clc;
-signal = randn(1000, 1000);
-kernel = randn(600, 600);
+signal = randn(100, 100);
+kernel = randn(60, 60);
 
 % pyrun("import numpy as np")
 % pyrun("import cupy as cp")
@@ -19,10 +19,11 @@ output_signal_fft = input_signal_fft .* kernel_fft;
 output_signal1 = ifft2(output_signal_fft);
 toc;
 
-%% Python conv2D
-%tic;
-%py_result = py.scipy.signal.convolve2d(signal, kernel); 
-%toc;
+%% Third, GPU original conv2D by python
+tic;
+gpu_conv2d = py.importlib.import_module('pt_gpu_convolve2d');
+result_gpu = gpu_conv2d.pt_conv2d(signal, kernel);
+toc;
 
 %% Python GPU FFT conv2D
 tic;
