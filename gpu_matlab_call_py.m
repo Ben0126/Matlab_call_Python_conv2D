@@ -2,7 +2,8 @@ clear; clc;
 signal = randn(1000, 1000);
 kernel = randn(600, 600);
 
-pyrun("import numpy as np")
+%pyrun("import numpy as np")
+pyrunfile(fft2d_conv.py)
 
 %% Matlab 內建conv2D
 tic;
