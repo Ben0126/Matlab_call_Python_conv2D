@@ -1,6 +1,4 @@
 import numpy as np
-import time
-
 
 def fft_conv2d(image, kernel):
     # Pad the kernel to the size of the image
@@ -17,7 +15,4 @@ def fft_conv2d(image, kernel):
     
     # Take real part of result (imaginary part should be very small)
     return np.real(result)
-
-
-
 

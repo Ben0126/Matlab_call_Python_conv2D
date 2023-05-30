@@ -2,12 +2,13 @@ clear; clc;
 signal = randn(1000, 1000);
 kernel = randn(600, 600);
 
-%pyrun("import numpy as np")
-pyrunfile(fft2d_conv.py)
+% pyrun("import numpy as np")
+% pyrun("import cupy as cp")
+% pyrun("import cupyx.scipy.fft as cufft")
 
 %% Matlab 內建conv2D
 tic;
-output_signal = conv2(signal, kernel, 'same');
+output_signal = conv2(signal, kernel);
 toc;
 
 %% Matlab FFT conv2D
@@ -20,13 +21,13 @@ toc;
 
 %% Python conv2D
 %tic;
-%py_result = py.scipy.signal.convolve2d(signal, kernel, 'same'); 
+%py_result = py.scipy.signal.convolve2d(signal, kernel); 
 %toc;
 
 %% Python GPU FFT conv2D
 tic;
 py.importlib.import_module('gpu_fft_convolve2D')
-result = py.gpu_fft_convolve2D.gpu_fft_convolve2D(signal, kernel);
+py.gpu_fft_convolve2D.gpu_fft_convolve2D(signal, kernel);
 toc;
 
 %disp(output_signal); %matlab conv2d
