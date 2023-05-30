@@ -107,7 +107,7 @@ def fft_convolve2d(image, kernel):
 
 if __name__ == "__main__":
     input_signal = np.random.rand(1000, 1000)
-    kernel = np.random.rand(60, 60)
+    kernel = np.random.rand(600, 600)
 
     start_time = time.time()
     fft_conv = fft_convolve2d(input_signal,kernel)
