@@ -6,7 +6,7 @@
 %         original/FFT
 
 clear;clc;
-a = 10000; b = 10000;
+a = 4000; b = 4000;
 signal = randn(a, a);
 kernel = randn(b, b);
 
