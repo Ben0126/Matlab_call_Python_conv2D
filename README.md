@@ -1,11 +1,10 @@
 # 2D Convolution using MATLAB and Python
 
 ...
-
-For more detailed information about comparing GPU and CPU speed for FFT convolution, please refer to the [Compare GPU and CPU Speed for FFT Convolution README](FFT_Convolutio-readme.md).
+## [Compare_GPU_CPU_FFT_Convolution](Compare_GPU_CPU_FFT_Convolution_README.md)
+If you are interested in comparing the performance of FFT convolution on GPU and CPU using Python.
 
 ...
-
 
 This repository provides MATLAB code for performing 2D convolution using Python. It demonstrates four different methods for convolution, including both CPU and GPU implementations. The methods are as follows:
 
@@ -19,10 +18,13 @@ This repository provides MATLAB code for performing 2D convolution using Python.
 
 To run the code, follow these steps:
 
-1. Make sure you have MATLAB installed on your system.
-2. Clone this repository or download the MATLAB script.
-3. Open MATLAB and navigate to the directory where the script is located.
-4. Run the script in MATLAB.
+1. Install Python 3.9.
+2. Install the following packages: numpy, cupy.
+3. Install MATLAB on your system.
+4. Clone this repository or download the MATLAB script.
+5. Open MATLAB and navigate to the directory where the script is located.
+6. Run the script in MATLAB using the following command: `matlab -r main`.
+7. Ensure that MATLAB can access the installed Python environment with the required packages (numpy, cupy).
 
 The script includes commented sections for each method. You can uncomment the desired method to perform the corresponding convolution. By default, the second and fourth methods (CPU FFT and GPU FFT convolution) are enabled.
 
@@ -36,5 +38,5 @@ Enjoy!
 
 **Note:** The `disp` statements at the end of the script can be uncommented to display the convolution results for each method.
 
-
-### If u want know more about **Convolution** in cuda、C & MATLAB [parallel-computing-cuda]([matlab_mex_test](https://github.com/andy856996/parallel-computing-cuda/tree/main/matlab_mex_test))
+## [matlab_mex_test link](https://github.com/andy856996/parallel-computing-cuda/tree/main/matlab_mex_test)
+If you want to learn more about the performance of convolution on CUDA, C, and MATLAB.
