@@ -19,4 +19,6 @@ def gpu_fft_convolve2D(signal, kernel):
     # 將結果移回主機內存
     product = cp.asnumpy(product_gpu)
     # 返回結果
+
+   
     return np.real(product)
