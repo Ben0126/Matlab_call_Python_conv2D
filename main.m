@@ -15,6 +15,8 @@ kernel = randn(b, b);
 cpu_fft_conv2d = py.importlib.import_module('fft_convolve2d');
 gpu_conv2d = py.importlib.import_module('pt_gpu_convolve2d');
 gpu_fft_conv2d = py.importlib.import_module('gpu_fft_convolve2D');
+pt_gpu_conv2d = py.importlib.import_module('pt_fft_gpu_conv2d');
+
 
 
 %% First method, CPU original conv2D by python
@@ -35,5 +37,10 @@ toc;
 %% Fourth, GPU FFT conv2D by python
 tic;
 result_gpu_fft = gpu_fft_conv2d.gpu_fft_convolve2D(signal, kernel);
+toc;
+
+%% Fourth, GPU FFT conv2D by pytorch
+tic;
+result_pt_fft = pt_gpu_conv2d.pt_fft_von2d(signal, kernel);
 toc;
 
