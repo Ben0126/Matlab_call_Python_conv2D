@@ -1,7 +1,7 @@
 # 2D Convolution using MATLAB and Python
 
 ...
-## [Compare_GPU_CPU_FFT_Convolution](FFT_Convolutio-readme.md.md)
+## [Compare_GPU_CPU_FFT_Convolution](FFT_Convolutio-readme.md)
 If you are interested in comparing the performance of FFT convolution on GPU and CPU using Python.
 
 ...
