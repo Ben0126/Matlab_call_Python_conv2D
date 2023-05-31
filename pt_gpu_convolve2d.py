@@ -24,14 +24,3 @@ def pt_conv2d(image, kernel):
     # 将结果转换回NumPy数组
     output = output_tensor.squeeze().detach().cpu().numpy()
     return np.real(output)
-
-# # 示例：使用随机生成的图像和卷积核进行卷积
-# image = np.random.rand(100, 100)
-# kernel = np.random.rand(60, 60)
-# # spent 622.83144 secs
-
-# t1 = time.time()
-# output = pt_conv2d(image, kernel)
-# t2 = time.time()
-# tt = t2-t1
-# print(tt)
