@@ -21,7 +21,6 @@ def pt_fft_von2d(signal,kernel):
 input_signal = np.random.rand(4000, 4000)
 kernel = np.random.rand(4000, 4000)
 
-
 start_time1 = time.time()
 r = pt_fft_von2d(input_signal,kernel)
 end_time1 = time.time()

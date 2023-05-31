@@ -40,7 +40,7 @@ result_gpu_fft = gpu_fft_conv2d.gpu_fft_convolve2D(signal, kernel);
 toc;
 
 %% Fourth, GPU FFT conv2D by pytorch
-tic;
-result_pt_fft = pt_gpu_conv2d.pt_fft_von2d(signal, kernel);
-toc;
+% tic;
+% result_pt_fft = pt_gpu_conv2d.pt_fft_von2d(signal, kernel);
+% toc;
 
