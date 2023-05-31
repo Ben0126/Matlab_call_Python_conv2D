@@ -2,7 +2,7 @@
 
 ...
 
-For more detailed information about comparing GPU and CPU speed for FFT convolution, please refer to the [Compare GPU and CPU Speed for FFT Convolution README](link-to-second-readme.md).
+For more detailed information about comparing GPU and CPU speed for FFT convolution, please refer to the [Compare GPU and CPU Speed for FFT Convolution README](FFT_Convolutio-readme.md).
 
 ...
 
