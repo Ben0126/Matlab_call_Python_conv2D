@@ -27,6 +27,7 @@ pt_fft_conv = pt_fft_von2d(input_signal,kernel)
 end_time2 = time.time()
 gpu_fft_conv_time2 = end_time2 - start_time2
 
-print("CPU conv2d :", fft_conv_time)
-print("GPU FFT :", gpu_fft_conv_time1)
-print("GPU pt FFT :", gpu_fft_conv_time2)
+
+print(f"CPU conv2d time: {fft_conv_time:.6f} seconds")
+print(f"GPU FFT time: {gpu_fft_conv_time1:.6f} seconds")
+print(f"GPU pt FFT time: {gpu_fft_conv_time2:.6f} seconds")
