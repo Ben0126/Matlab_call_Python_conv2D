@@ -20,7 +20,7 @@ The script includes commented sections for each method. You can uncomment the de
 
 **Note:** Currently, there is an issue with the third method (GPU original convolution) when using PyTorch in MATLAB, resulting in the error message "Python Error: ValueError: could not determine the shape of object type 'memoryview'." This issue is still pending resolution. Therefore, the third method is not executable in MATLAB at the moment.
 
-The resulting convolutions are stored in MATLAB variables 'result_cpu_fft_mat' and 'result_gpu_fft_mat' for the CPU FFT and GPU FFT methods, respectively.
+The resulting convolutions are stored in MATLAB variables **'result_cpu_fft_mat'** and **'result_gpu_fft_mat'** for the CPU FFT and GPU FFT methods, respectively.
 
 Feel free to modify the code and experiment with different input signals and kernels to observe the convolution results using different methods.
 
