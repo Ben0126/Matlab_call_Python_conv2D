@@ -36,3 +36,4 @@ Enjoy!
 
 **Note:** The `disp` statements at the end of the script can be uncommented to display the convolution results for each method.
 
+If u want know more about **Convolution** in cuda、C & MATLAB [parallel-computing-cuda](matlab_mex_test)
