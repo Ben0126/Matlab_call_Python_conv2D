@@ -1,4 +1,5 @@
 # Convolution in 2D using Python and MATLAB
+For more detailed information about comparing GPU and CPU speed for FFT convolution, please refer to the [Compare GPU and CPU Speed for FFT Convolution README](link-to-second-readme).
 
 This repository provides MATLAB code for performing 2D convolution using Python. It demonstrates four different methods for convolution, including both CPU and GPU implementations. The methods are as follows:
 
@@ -27,3 +28,7 @@ Note: The code requires specific Python libraries, which are imported using the 
 Feel free to modify the code and experiment with different inputs to observe the performance differences between CPU and GPU convolution methods.
 
 Enjoy!
+
+## License
+
+This project is licensed under the [MIT License](LICENSE)
