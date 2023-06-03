@@ -7,8 +7,8 @@ from fft_convolve2d import fft_conv2d
 from pt_fft_gpu_conv2d import pt_fft_von2d
 
 
-a = 5000
-b = 5000
+a = 4000
+b = 4000
 input_signal = np.random.rand(a, a)
 kernel = np.random.rand(b, b)
 
@@ -30,4 +30,4 @@ gpu_fft_conv_time2 = end_time2 - start_time2
 
 print(f"CPU conv2d time: {fft_conv_time:.6f} seconds")
 print(f"GPU FFT time: {gpu_fft_conv_time1:.6f} seconds")
-print(f"GPU pt FFT time: {gpu_fft_conv_time2:.6f} seconds")
+print(f"GPU pyTorch FFT time: {gpu_fft_conv_time2:.6f} seconds")
