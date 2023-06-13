@@ -33,9 +33,9 @@ npary1 = double(py.array.array('d',py.numpy.nditer(result_cpu_fft)));
 result_cpu_fft_mat = reshape(npary1,fliplr(sh))';  % matlab 2d array
 
 %% Third, GPU original conv2D by python
-% tic;
-% result_gpu = gpu_conv2d.pt_conv2d(signal, kernel);
-% toc;
+tic;
+result_gpu = gpu_conv2d.pt_conv2d(signal, kernel);
+toc;
 
 %% Fourth, GPU FFT conv2D by python
 tic;
@@ -47,9 +47,9 @@ npary2 = double(py.array.array('d',py.numpy.nditer(result_gpu_fft)));
 result_gpu_fft_mat = reshape(npary2,fliplr(sh1))';
 
 %% Other, GPU FFT conv2D by pytorch
-% tic;
-% result_pt_fft = pt_gpu_conv2d.pt_fft_von2d(signal, kernel);
-% toc;
+tic;
+result_pt_fft = pt_gpu_conv2d.pt_fft_von2d(signal, kernel);
+toc;
 
 dev.reset
 %% Disp
