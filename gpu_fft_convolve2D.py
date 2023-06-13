@@ -18,7 +18,8 @@ def gpu_fft_convolve2D(signal, kernel):
     product_gpu = cufft.ifftn(product_freq_gpu)
     # 將結果移回主機內存
     product = cp.asnumpy(product_gpu)
+    # 清除GPU的VRAM
+    cp.get_default_memory_pool().free_all_blocks()
     # 返回結果
-
-   
+    
     return np.real(product)
