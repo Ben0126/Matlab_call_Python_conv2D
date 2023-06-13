@@ -1,7 +1,6 @@
 import numpy as np
 import cupy as cp
 import cupyx.scipy.fft as cufft
-import time
 
 def gpu_fft_convolve2D(signal, kernel):
     # 將數據移到GPU內存
@@ -29,15 +28,3 @@ def gpu_fft_convolve2D(signal, kernel):
 
     # 返回結果
     return np.real(product)
-
-size = 4000
-signal = np.random.rand(size, size)
-kernel = np.random.rand(size, size)
-
-
-start_time = time.time()
-gpu_fft_conv = gpu_fft_convolve2D(signal, kernel)
-end_time = time.time()
-gpu_fft_conv_time = end_time - start_time
-
-print(f"CPU conv2d time: {gpu_fft_conv_time:.6f} seconds")
