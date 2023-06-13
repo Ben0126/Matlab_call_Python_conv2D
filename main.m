@@ -5,15 +5,18 @@
 %     GPU
 %         original/FFT
 
-clear;clc;
-signal = randn(4000, 4000);
-kernel = randn(4000, 4000);
-
+clear;
+% signal =ones(10000,10000) ;
+% kernel = ones(10000,10000);
+a = 10000;
+signal = rand(a, a);
+kernel = rand(a, a);
+dev = gpuDevice();
 % import py libraries
 cpu_fft_conv2d = py.importlib.import_module('fft_convolve2d');
-gpu_conv2d = py.importlib.import_module('pt_gpu_convolve2d');
+%gpu_conv2d = py.importlib.import_module('pt_gpu_convolve2d');
 gpu_fft_conv2d = py.importlib.import_module('gpu_fft_convolve2D');
-pt_gpu_conv2d = py.importlib.import_module('pt_fft_gpu_conv2d');
+%pt_gpu_conv2d = py.importlib.import_module('pt_fft_gpu_conv2d');
 
 %% First method, CPU original conv2D by python
 % tic;
@@ -24,6 +27,7 @@ pt_gpu_conv2d = py.importlib.import_module('pt_fft_gpu_conv2d');
 tic;
 result_cpu_fft = cpu_fft_conv2d.fft_conv2d(signal, kernel);
 toc;
+
 sh = double(py.array.array('d',result_cpu_fft.shape));
 npary1 = double(py.array.array('d',py.numpy.nditer(result_cpu_fft)));
 result_cpu_fft_mat = reshape(npary1,fliplr(sh))';  % matlab 2d array
@@ -47,6 +51,7 @@ result_gpu_fft_mat = reshape(npary2,fliplr(sh1))';
 % result_pt_fft = pt_gpu_conv2d.pt_fft_von2d(signal, kernel);
 % toc;
 
+dev.reset
 %% Disp
 % disp(result_cpu_fft); 
 % disp(result_cpu_fft_mat); 
