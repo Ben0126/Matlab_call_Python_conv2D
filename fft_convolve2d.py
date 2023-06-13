@@ -6,6 +6,7 @@ def fft_conv2d(image, kernel):
     kh, kw = kernel.shape
     kernel_padded[:kh, :kw] = kernel
     
+    
     # Compute FFT of image and kernel
     image_fft = np.fft.fft2(image)
     kernel_fft = np.fft.fft2(kernel_padded)
