@@ -7,7 +7,7 @@ from pt_gpu_conv2d import pt_cvon2d
 from pt_fft_YJ_conv2d import pt_fft_cvon2d
 
 
-sizes = [100,500,1000,4000,7000,10000]
+sizes = [500,1000,2000,4000]
 cpu_times = []
 gpu_fft_times = []
 pt_times = []
@@ -29,11 +29,11 @@ for size in sizes:
     gpu_fft_conv_time = end_time1 - start_time1
     gpu_fft_times.append(gpu_fft_conv_time)
 
-    # start_time2 = time.time()
-    # pt_conv = pt_cvon2d(input_signal, kernel)
-    # end_time2 = time.time()
-    # pt_time = end_time2 - start_time2
-    # pt_times.append(pt_time)
+    start_time2 = time.time()
+    pt_conv = pt_cvon2d(input_signal, kernel)
+    end_time2 = time.time()
+    pt_time = end_time2 - start_time2
+    pt_times.append(pt_time)
 
     start_time3 = time.time()
     pt_fft_conv = pt_fft_cvon2d(input_signal, kernel)
@@ -44,5 +44,5 @@ for size in sizes:
     print(f"Size: {size} x {size}")
     # print(f"CPU conv2d time: {fft_conv_time:.6f} seconds")
     print(f"GPU FFT time: {gpu_fft_conv_time:.6f} seconds")
-    # print(f"GPU pyTorch time: {pt_time:.6f} seconds")
+    print(f"GPU pyTorch time: {pt_time:.6f} seconds")
     print(f"GPU FFT pyTorch time: {pt_fft_conv_time:.6f} seconds")
